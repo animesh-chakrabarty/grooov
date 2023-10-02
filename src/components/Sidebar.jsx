@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="m-5">
-      {/* Hi , Welcome to Lyriks div */}
+    <div className="m-5 ml-2">
+      {/* Hi , Welcome to Groov div */}
       <div className="cursor-pointer intro">
         <div>
           <div className="">
@@ -71,7 +71,7 @@ const Sidebar = () => {
               <Link to="/favourites">
                 <div className="flex gap-3 hover:text-gray-400">
                   <BsFillHeartFill fontSize={25} color="white" />
-                  <p>Favourites</p>
+                  <p>Favourite</p>
                 </div>
               </Link>
             </li>

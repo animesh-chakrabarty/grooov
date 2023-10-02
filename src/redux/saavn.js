@@ -12,7 +12,14 @@ export const saavnApi = createApi({
     getPlaylistDetails: builder.query({
       query: (params) => `playlists?id=${params}`,
     }),
+    getSearchResult: builder.query({
+      query: (params) => `search/songs?query=${params}&page=1&limit=20`,
+    }),
   }),
 });
 
-export const { useGetHomePageDataQuery , useGetPlaylistDetailsQuery} = saavnApi;
+export const {
+  useGetHomePageDataQuery,
+  useGetPlaylistDetailsQuery,
+  useGetSearchResultQuery,
+} = saavnApi;

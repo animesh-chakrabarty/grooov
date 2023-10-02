@@ -15,7 +15,7 @@ const AudioPlayer = () => {
   const dispatch = useDispatch();
 
   console.log(data);
-  console.log(data?.data?.songs.length - 1);
+  console.log(data?.length - 1);
 
   const handlePlay = () => {
     dispatch(play());
@@ -30,14 +30,14 @@ const AudioPlayer = () => {
   };
 
   const handleNextSong = () => {
-    dispatch(nextSong(data?.data?.songs.length));
+    dispatch(nextSong(data?.length));
   };
 
   return (
     <div className="mt-[70%]">
       <div className="bg-[#D9C9F2] flex flex-col">
         <h2 className="text-xl font-bold">
-          {data?.data?.songs[currentSongIndex]?.name}
+          {data[currentSongIndex]?.name}
         </h2>
         <div className="flex justify-between items-center my-4">
           <button onClick={handlePrevSong} className="outline-none">
@@ -58,7 +58,7 @@ const AudioPlayer = () => {
         </div>
       </div>
       <ReactPlayer
-        url={data?.data?.songs[currentSongIndex]?.downloadUrl[4]?.link}
+        url={data[currentSongIndex]?.downloadUrl[4]?.link}
         playing={isPlaying}
         onPlay={handlePlay}
         onPause={handlePause}
