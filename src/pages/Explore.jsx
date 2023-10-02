@@ -15,9 +15,16 @@ const Explore = () => {
 
   console.log(homePageData);
 
-  const trendings = homePageData?.data?.albums;
+  // const trendings = homePageData?.data?.albums;
   const featuredPlaylists = homePageData?.data?.playlists;
   const albums = homePageData?.data?.trending?.albums;
+
+  console.log(featuredPlaylists);
+  // featuredPlaylists.map((list,i)=>{
+  //   if(list)
+  // })
+
+  const { data : trendings} = useGetPlaylistDetailsQuery("110858205");
 
   console.log(trendings);
   // console.log(charts);
@@ -39,7 +46,7 @@ const Explore = () => {
         </div>
         {/* Wrapper */}
         <div className="flex gap-5 max-lg:gap-3 overflow-auto no-scrollbar">
-          {trendings?.slice(0, 10).map((trending, i) => (
+          {trendings?.data?.songs?.slice(0, 10).map((trending, i) => (
             <div key={trending?.id}>
               <SongCard trending={trending} data={trendings} i={i} />
             </div>
