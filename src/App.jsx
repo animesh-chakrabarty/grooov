@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="wrapper flex h-[100vh] w-[100vw] ">
       {/* Side Bar */}
-      <div className="max-xl:hidden w-[15%]">
+      <div className="max-xl:hidden w-[10%]">
         <Sidebar />
         <AudioPlayer/>
       </div>
