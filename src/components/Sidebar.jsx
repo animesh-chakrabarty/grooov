@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="m-5 ml-2">
+    <div className="m-2 ">
       {/* Hi , Welcome to Groov div */}
       <div className="cursor-pointer intro">
         <div>
@@ -47,7 +47,7 @@ const Sidebar = () => {
               <Link to="/trendings">
                 <div className="flex gap-3 hover:text-gray-400">
                   <FaHashtag fontSize={25} color="white" />
-                  <p>Trendings</p>
+                  <p>Trending</p>
                 </div>
               </Link>
             </li>

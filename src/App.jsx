@@ -14,12 +14,12 @@ const App = () => {
   return (
     <div className="wrapper flex h-[100vh] w-[100vw] ">
       {/* Side Bar */}
-      <div className="max-xl:hidden w-[12%]">
+      <div className="max-xl:hidden w-[12%] pl-5 pt-5">
         <Sidebar />
         <AudioPlayer />
       </div>
       {/* Body */}
-      <div className="w-[110%] bg-[#FFFFFF] py-3 lg:px-5 max-lg:px-2 rounded-3xl max-lg:rounded-lg lg:mx-5 overflow-auto no-scrollbar max-md:w-[100%]">
+      <div className="w-[110%] bg-[#FFFFFF] py-3 lg:px-5 max-lg:px-2 md:rounded-3xl lg:mx-5 overflow-auto no-scrollbar md:m-[15px]">
         <Routes>
           <Route path="/" element={<Explore />}></Route>
           <Route path="/search" element={<Search />}></Route>

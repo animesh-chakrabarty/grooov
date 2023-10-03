@@ -20,7 +20,7 @@
 
 .wrapper{
     background: linear-gradient(to bottom right ,#3D3459 , #171335 , #383055);
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 body{
