@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react";
+
 import {
   useGetHomePageDataQuery,
   useGetPlaylistDetailsQuery,
@@ -10,6 +11,11 @@ import ChartCard from "../components/ChartCard";
 import { Link } from "react-router-dom";
 import AlbumCard from "../components/AlbumCard";
 
+import { BsSearch } from "react-icons/bs";
+
+import { useGetSearchResultQuery } from "../redux/saavn";
+import { useNavigate, useParams } from "react-router-dom";
+
 const Explore = () => {
   const { data: homePageData } = useGetHomePageDataQuery();
   const { data: trendings } = useGetPlaylistDetailsQuery("110858205");
@@ -19,15 +25,46 @@ const Explore = () => {
 
   console.log(charts);
 
+  const navigate = useNavigate();
+  const [input, setInput] = useState("");
+  const { searchTerm } = useParams();
+
+  console.log("x" + searchTerm);
+  let { data: searchResult } = useGetSearchResultQuery(searchTerm);
+  console.log(searchResult);
+
+  const handleSubmit = () => {
+    console.log("searched for " + input);
+    navigate(`/search/${input}`);
+  };
+
+  searchResult = searchResult?.data?.results;
+  console.log(searchResult);
+
   return (
     <div className="">
-      
       {/* Top Div */}
       <div>
+        {/* Search Bar */}
+        <div className=" flex justify-center items-end mt-5  mb-3">
+          <form action="" className="flex gap-3 ">
+            <input
+              type="text"
+              placeholder="Search for a song , album ..."
+              onChange={(e) => setInput(e.target.value)}
+              className="outline-none px-6 py-1"
+            />
+            <button onClick={handleSubmit} className="">
+              <BsSearch size={20}/>
+            </button>
+          </form>
+        </div>
+
+
         {/* Trendings (song) */}
         <div className="flex flex-col gap-3 mt-3">
           {/* Trendings Title */}
-          <div className="flex justify-between max-lg:px-3">
+          <div className="flex justify-between max-lg:px-3 mb-1">
             <h3 className="text-2xl font-bold ">Trending</h3>
             <Link
               className="text-gray-700 cursor-pointer lg:mr-3"
@@ -52,7 +89,7 @@ const Explore = () => {
         {/* Top Charts */}
         <div className="w-3/4 max-lg:w-full  max-lg:overflow-auto ">
           {/* Top Charts Title*/}
-          <div className="flex justify-between items-center max-lg:px-3">
+          <div className="flex justify-between items-center max-lg:px-3 mb-1">
             <h3 className="text-2xl font-bold">
               Top <br className="lg:hidden" />
               Charts

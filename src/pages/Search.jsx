@@ -46,7 +46,7 @@ const Search = () => {
       </div>
       <div>
         {searchTerm !== undefined && (
-          <div className="resultWrapper flex gap-5 flex-wrap lg:ml-5">
+          <div className="resultWrapper flex gap-3 flex-wrap lg:ml-5">
             {searchResult?.map((song, i) => (
               <SongCard key={song?.id} song={song} i={i} data={searchResult} />
             ))}
