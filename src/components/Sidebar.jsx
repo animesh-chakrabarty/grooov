@@ -7,6 +7,8 @@ import { FaHashtag } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 
+import logo from "../assets/groov_icon.png"
+
 const Sidebar = () => {
   return (
     <div className="m-2 ">
@@ -17,7 +19,10 @@ const Sidebar = () => {
             <span className="text-xl text-gray-300">Hi!</span> <br />
             <span className="text-xl text-gray-300">Welcome to</span> <br />
           </div>
-          <span className="text-5xl font-bold text-white ">Groov</span>
+          <div className="ml-[-10px]">
+
+          <img src={logo} alt="icon" />
+          </div>
         </div>
       </div>
 
