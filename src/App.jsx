@@ -19,7 +19,7 @@ const App = () => {
         <AudioPlayer />
       </div>
       {/* Body */}
-      <div className="w-[110%] bg-[#FFFFFF] py-3 lg:px-5 max-lg:px-2 md:rounded-3xl lg:mx-5 overflow-auto no-scrollbar md:m-[15px]">
+      <div className="w-[110%] bg-[#FFFFFF] py-3 lg:px-5 max-lg:px-0 md:rounded-3xl lg:mx-5 overflow-auto no-scrollbar md:m-[15px]">
         <Routes>
           <Route path="/" element={<Explore />}></Route>
           <Route path="/search" element={<Search />}></Route>
