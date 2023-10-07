@@ -57,7 +57,7 @@ const Explore = () => {
       {/* Bottom Div */}
       <div className="bottom flex gap-5 mt-7 max-lg:flex-col ">
         {/* Featured Playlist */}
-        <div className="w-[112%] max-lg:w-full  max-lg:overflow-auto">
+        <div className="w-3/4 max-lg:w-full  max-lg:overflow-auto ">
           {/* Featured Playlist Title*/}
           <div className="flex justify-between items-center">
             <h3 className="text-2xl font-bold">
@@ -81,7 +81,7 @@ const Explore = () => {
         </div>
 
         {/* Albums */}
-        <div className="w-[30%] max-lg:w-full ">
+        <div className="w-1/3 max-lg:w-full ">
           {/* Title & See more */}
           <div className="flex justify-between items-center">
             <h3 className="text-2xl font-bold">Albums</h3>
