@@ -21,27 +21,29 @@ const Explore = () => {
 
   return (
     <div className="">
+      
       {/* Top Div */}
-
-      {/* Trendings (song) */}
-      <div className="flex flex-col gap-3 mt-3">
-        {/* Trendings Title */}
-        <div className="flex justify-between max-lg:px-3">
-          <h3 className="text-2xl font-bold ">Trending</h3>
-          <Link
-            className="text-gray-700 cursor-pointer lg:mr-3"
-            to="/trendings"
-          >
-            see more...
-          </Link>
-        </div>
-        {/* Trendings Wrapper */}
-        <div className="flex gap-5 max-lg:gap-1 overflow-auto no-scrollbar">
-          {trendings?.data?.songs?.slice(0, 11).map((song, i) => (
-            <div key={song?.id}>
-              <SongCard song={song} data={trendings?.data?.songs} i={i} />
-            </div>
-          ))}
+      <div>
+        {/* Trendings (song) */}
+        <div className="flex flex-col gap-3 mt-3">
+          {/* Trendings Title */}
+          <div className="flex justify-between max-lg:px-3">
+            <h3 className="text-2xl font-bold ">Trending</h3>
+            <Link
+              className="text-gray-700 cursor-pointer lg:mr-3"
+              to="/trendings"
+            >
+              see more...
+            </Link>
+          </div>
+          {/* Trendings Wrapper */}
+          <div className="flex gap-5 max-lg:gap-1 overflow-auto no-scrollbar">
+            {trendings?.data?.songs?.slice(0, 11).map((song, i) => (
+              <div key={song?.id}>
+                <SongCard song={song} data={trendings?.data?.songs} i={i} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
