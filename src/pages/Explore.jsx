@@ -46,7 +46,7 @@ const Explore = () => {
         </div>
         {/* Wrapper */}
         <div className="flex gap-5 max-lg:gap-3 overflow-auto no-scrollbar">
-          {trendings?.data?.songs?.slice(0, 10).map((song, i) => (
+          {trendings?.data?.songs?.slice(0, 11).map((song, i) => (
             <div key={song?.id}>
               <SongCard song={song} data={trendings?.data?.songs} i={i} />
             </div>
