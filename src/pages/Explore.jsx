@@ -5,7 +5,7 @@ import {
 } from "../redux/saavn";
 
 import SongCard from "../components/SongCard";
-import PlaylistCard from "../components/PlaylistCard";
+import ChartCard from "../components/ChartCard";
 
 import { Link } from "react-router-dom";
 import AlbumCard from "../components/AlbumCard";
@@ -16,11 +16,11 @@ const Explore = () => {
   console.log(homePageData);
 
   // const trendings = homePageData?.data?.albums;
-  const featuredPlaylists = homePageData?.data?.playlists;
+  const charts = homePageData?.data?.playlists;
   const albums = homePageData?.data?.trending?.albums;
 
-  console.log(featuredPlaylists);
-  // featuredPlaylists.map((list,i)=>{
+  console.log(charts);
+  // charts.map((list,i)=>{
   //   if(list)
   // })
 
@@ -33,7 +33,7 @@ const Explore = () => {
     <div className="">
       {/* Top Div */}
       {/* Trendings (song) */}
-      <div className="top flex flex-col gap-3 mt-3">
+      <div className="flex flex-col gap-3 mt-3">
         {/* Title & see more */}
         <div className="flex justify-between">
           <h3 className="text-2xl font-bold">Trending</h3>
@@ -55,25 +55,25 @@ const Explore = () => {
       </div>
 
       {/* Bottom Div */}
-      <div className="bottom flex gap-5 mt-7 max-lg:flex-col ">
-        {/* Featured Playlist */}
+      <div className="flex gap-5 mt-7 max-lg:flex-col ">
+        {/* Top Charts */}
         <div className="w-3/4 max-lg:w-full  max-lg:overflow-auto ">
-          {/* Featured Playlist Title*/}
+          {/* Top Charts Title*/}
           <div className="flex justify-between items-center">
             <h3 className="text-2xl font-bold">
-              Featured <br className="lg:hidden" />
-              Playlists
+              Top <br className="lg:hidden" />
+              Charts
             </h3>
             <Link className="text-gray-700 cursor-pointer lg:mr-6" to="/charts">
               see more...
             </Link>
           </div>
-          {/* Featured Playlist Wrapper*/}
+          {/* Top Charts Wrapper*/}
           <div className="flex gap-5 max-lg:gap-3 lg:flex-wrap  overflow-auto no-scrollbar max-lg:overflow-auto max-lg:w-full max-lg:h-[200px] mt-5 mb-3">
-            {featuredPlaylists?.slice(0, 15).map((playlist, i) => {
+            {charts?.slice(0, 15).map((chart, i) => {
               return (
-                <div key={playlist?.id}>
-                  <PlaylistCard playlist={playlist} />
+                <div key={chart?.id}>
+                  <ChartCard chart={chart} />
                 </div>
               );
             })}
@@ -82,14 +82,14 @@ const Explore = () => {
 
         {/* Albums */}
         <div className="w-[35%] max-lg:w-full b">
-          {/* Title & See more */}
+          {/* Albums Title */}
           <div className="flex justify-between items-center">
             <h3 className="text-2xl font-bold">Albums</h3>
             <Link className="text-gray-700 cursor-pointer mr-3" to="/albums">
               see more...
             </Link>
           </div>
-          {/* Wrapper */}
+          {/* Albums Wrapper */}
           <div className="flex flex-col justify-start gap-3 mt-5 ">
             {albums?.slice(0, 7).map((album) => {
               return (

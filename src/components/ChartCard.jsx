@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PlaylistCard = ({ playlist }) => {
-  // console.log(playlist)
+const ChartCard = ({ chart }) => {
+  // console.log(chart)
 
-  // console.log(playlist?.songCount)
-  // console.log(playlist?.title)
+  // console.log(chart?.songCount)
+  // console.log(chart?.title)
 
   return (
     <Link>
@@ -16,15 +16,15 @@ const PlaylistCard = ({ playlist }) => {
           </button>
         </div>
         <img
-          src={playlist?.image[2]?.link}
+          src={chart?.image[2]?.link}
           alt=""
           className="object-contain h-[100%] w-[100%] rounded-lg"
         />
         {/* Song Name & Artist Name
       <div className="w-[170px] text-left mt-2 pl-2">
-        <h1 className="truncate text-lg font-[600]">{playlist?.title}</h1>
+        <h1 className="truncate text-lg font-[600]">{chart?.title}</h1>
         <h3 className="truncate text-[14px]">
-          SongCount : {playlist?.songCount}
+          SongCount : {chart?.songCount}
         </h3>
       </div> */}
       </div>
@@ -32,4 +32,4 @@ const PlaylistCard = ({ playlist }) => {
   );
 };
 
-export default PlaylistCard;
+export default ChartCard;
