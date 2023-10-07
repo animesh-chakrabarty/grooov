@@ -31,7 +31,7 @@ const SongCard = ({ data, song, i }) => {
   };
 
   return (
-    <div className="h-[270px] w-[200px] bg-[#D9C9F2] flex flex-col p-2 rounded-[12px] cursor-pointer text-gray-800 bg-opacity-60 hover:bg-opacity-100 relative group">
+    <div className="h-[270px] w-[200px] max-md:h-[200px] max-md:w-[148px] bg-[#D9C9F2] flex flex-col p-2 rounded-[12px] cursor-pointer text-gray-800 bg-opacity-60 hover:bg-opacity-100 relative group">
       <img
         src={song?.image[2]?.link}
         alt=""
@@ -61,7 +61,7 @@ const SongCard = ({ data, song, i }) => {
       </div>
 
       {/* Song Name & Artist Name */}
-      <div className="w-[170px] text-left mt-2 pl-2">
+      <div className="w-[90%] text-left mt-1 pl-2">
         <h1 className="truncate text-lg font-[600]">{song?.name}</h1>
         <h3 className="truncate text-[14px]">{song?.primaryArtists}</h3>
       </div>
