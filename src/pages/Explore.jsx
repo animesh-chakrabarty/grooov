@@ -12,29 +12,20 @@ import AlbumCard from "../components/AlbumCard";
 
 const Explore = () => {
   const { data: homePageData } = useGetHomePageDataQuery();
+  const { data: trendings } = useGetPlaylistDetailsQuery("110858205");
 
-  console.log(homePageData);
-
-  // const trendings = homePageData?.data?.albums;
   const charts = homePageData?.data?.playlists;
   const albums = homePageData?.data?.trending?.albums;
 
   console.log(charts);
-  // charts.map((list,i)=>{
-  //   if(list)
-  // })
-
-  const { data: trendings } = useGetPlaylistDetailsQuery("110858205");
-
-  console.log(trendings);
-  // console.log(charts);
 
   return (
     <div className="">
       {/* Top Div */}
+
       {/* Trendings (song) */}
       <div className="flex flex-col gap-3 mt-3">
-        {/* Title & see more */}
+        {/* Trendings Title */}
         <div className="flex justify-between max-lg:px-3">
           <h3 className="text-2xl font-bold ">Trending</h3>
           <Link
@@ -44,7 +35,7 @@ const Explore = () => {
             see more...
           </Link>
         </div>
-        {/* Wrapper */}
+        {/* Trendings Wrapper */}
         <div className="flex gap-5 max-lg:gap-1 overflow-auto no-scrollbar">
           {trendings?.data?.songs?.slice(0, 11).map((song, i) => (
             <div key={song?.id}>
