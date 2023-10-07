@@ -45,7 +45,7 @@ const Explore = () => {
           </Link>
         </div>
         {/* Wrapper */}
-        <div className="flex gap-5 max-lg:gap-3 overflow-auto no-scrollbar">
+        <div className="flex gap-5 max-lg:gap-1 overflow-auto no-scrollbar">
           {trendings?.data?.songs?.slice(0, 11).map((song, i) => (
             <div key={song?.id}>
               <SongCard song={song} data={trendings?.data?.songs} i={i} />
@@ -69,7 +69,7 @@ const Explore = () => {
             </Link>
           </div>
           {/* Top Charts Wrapper*/}
-          <div className="flex gap-5 max-lg:gap-3 lg:flex-wrap  overflow-auto no-scrollbar max-lg:overflow-auto max-lg:w-full max-lg:h-[200px] mt-5 mb-3">
+          <div className="flex gap-5 max-lg:gap-1 lg:flex-wrap  overflow-auto no-scrollbar max-lg:overflow-auto max-lg:w-full max-lg:h-[200px] mt-5 mb-3">
             {charts?.slice(0, 15).map((chart, i) => {
               return (
                 <div key={chart?.id}>
