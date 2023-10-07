@@ -81,7 +81,7 @@ const Explore = () => {
         </div>
 
         {/* Albums */}
-        <div className="w-1/3 max-lg:w-full ">
+        <div className="w-[35%] max-lg:w-full b">
           {/* Title & See more */}
           <div className="flex justify-between items-center">
             <h3 className="text-2xl font-bold">Albums</h3>
