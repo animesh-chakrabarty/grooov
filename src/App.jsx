@@ -45,7 +45,7 @@ const App = () => {
         </Link>
       </div>
       {/* Routes */}
-      <div className="w-[110%] bg-[#FFFFFF] py-3 lg:px-5 max-lg:px-0 md:rounded-3xl lg:mx-5 overflow-auto no-scrollbar md:m-[15px] max-md:h-[calc(100%-70px)]">
+      <div className="w-[110%] bg-[#FFFFFF] py-3 lg:px-5 max-lg:px-0 md:rounded-3xl lg:mx-5 overflow-auto no-scrollbar md:m-[15px] max-md:h-[calc(100%-90px)]">
         <Routes>
           <Route path="/" element={<Explore />}></Route>
           <Route path="/search" element={<Search />}></Route>
