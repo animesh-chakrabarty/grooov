@@ -51,7 +51,7 @@ const Explore = () => {
       {/* Top Div */}
       <div>
         {/* Logo for mobile devices */}
-        <div className="md:hidden pl-2 pr-5 pt-1  flex justify-between items-center">
+        <div className="md:hidden pl-2 pr-5 flex justify-between items-center">
           <img src={logo2} alt="" className="h-[50px] w-[150px]" />
           <button
             onClick={() => {
