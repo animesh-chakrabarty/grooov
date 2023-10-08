@@ -16,6 +16,13 @@ import { BsSearch } from "react-icons/bs";
 import { useGetSearchResultQuery } from "../redux/saavn";
 import { useNavigate, useParams } from "react-router-dom";
 
+import logo from "../assets/groov_icon.png"
+import logo2 from "../assets/groov_icon_2.png"
+
+import {ImGithub} from "react-icons/im"
+
+
+
 const Explore = () => {
   const { data: homePageData } = useGetHomePageDataQuery();
   const { data: trendings } = useGetPlaylistDetailsQuery("110858205");
@@ -45,6 +52,11 @@ const Explore = () => {
     <div className="">
       {/* Top Div */}
       <div>
+        {/* Logo for mobile devices */}
+        <div className="lg:hidden pl-4 pr-5 py-4 flex justify-between items-center">
+          <img src={logo2} alt="" className="h-[50px] w-[150px]"/>
+          <ImGithub size={30}/>
+        </div>
         {/* Search Bar */}
         <div className=" flex justify-center items-end mt-5  mb-3">
           <form action="" className="flex gap-3 ">
