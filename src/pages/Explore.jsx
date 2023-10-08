@@ -51,7 +51,7 @@ const Explore = () => {
       {/* Top Div */}
       <div>
         {/* Logo for mobile devices */}
-        <div className="md:hidden pl-2 pr-5 pt-3 pb-1 flex justify-between items-center">
+        <div className="md:hidden pl-2 pr-5 pt-1  flex justify-between items-center">
           <img src={logo2} alt="" className="h-[50px] w-[150px]" />
           <button
             onClick={() => {
@@ -64,7 +64,7 @@ const Explore = () => {
           </button>
         </div>
         {/* Search Bar */}
-        <div className=" flex justify-center items-end mt-5  mb-5">
+        <div className=" flex justify-center items-end mt-3 mb-4">
           <form action="" className="flex gap-3 ">
             <input
               type="text"
