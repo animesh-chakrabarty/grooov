@@ -51,7 +51,7 @@ const Explore = () => {
       {/* Top Div */}
       <div>
         {/* Logo for mobile devices */}
-        <div className="md:hidden pl-2 pr-5 py-3 flex justify-between items-center">
+        <div className="md:hidden pl-2 pr-5 pt-3 pb-1 flex justify-between items-center">
           <img src={logo2} alt="" className="h-[50px] w-[150px]" />
           <button
             onClick={() => {
@@ -82,7 +82,7 @@ const Explore = () => {
         <div className="flex flex-col gap-3 mt-3">
           {/* Trendings Title */}
           <div className="flex justify-between max-lg:px-3 mb-1">
-            <h3 className="text-3xl font-[600] font-jost">Trending</h3>
+            <h3 className="text-3xl font-[600] ">Trending</h3>
             <Link
               className="text-gray-700 cursor-pointer lg:mr-3"
               to="/trendings"
@@ -102,12 +102,12 @@ const Explore = () => {
       </div>
 
       {/* Bottom Div */}
-      <div className="flex gap-5 mt-7 max-lg:flex-col ">
+      <div className="flex mt-7 max-lg:flex-col ">
         {/* Top Charts */}
-        <div className="w-3/4 max-lg:w-full  max-lg:overflow-auto ">
+        <div className="w-[68%] max-lg:w-full  max-lg:overflow-auto ">
           {/* Top Charts Title*/}
           <div className="flex justify-between items-center max-lg:px-3 mb-1">
-            <h3 className="text-3xl font-[600] font-jost">
+            <h3 className="text-3xl font-[600] ">
               Top <br className="lg:hidden" />
               Charts
             </h3>
@@ -128,10 +128,10 @@ const Explore = () => {
         </div>
 
         {/* Albums */}
-        <div className="w-[35%] max-lg:w-full b">
+        <div className="w-[32%] max-lg:w-full ">
           {/* Albums Title */}
           <div className="flex justify-between items-center max-lg:px-3">
-            <h3 className="text-3xl font-[600] font-jost">Albums</h3>
+            <h3 className="text-3xl font-[600] ">Albums</h3>
             <Link className="text-gray-700 cursor-pointer mr-3" to="/albums">
               see more...
             </Link>

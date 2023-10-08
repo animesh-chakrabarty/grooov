@@ -12,7 +12,7 @@ import AudioPlayer from "./components/AudioPlayer";
 
 const App = () => {
   return (
-    <div className="wrapper flex h-[100vh] w-[100vw] ">
+    <div className="wrapper flex h-[100vh] w-[100vw] font-jost">
       {/* Side Bar */}
       <div className="max-xl:hidden w-[12%] pl-5 pt-5">
         <Sidebar />
