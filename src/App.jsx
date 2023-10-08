@@ -24,23 +24,23 @@ const App = () => {
       </div>
       {/* Body */}
       {/* Mobile Nav */}
-      <div className="md:hidden h-[70px] w-full mobile-nav-bg bottom-0 absolute flex justify-between items-center text-white px-8 text-[17px] pt-1">
+      <div className="md:hidden h-[60px] w-full mobile-nav-bg bottom-0 absolute flex justify-between items-center text-white px-10 text-[17px] pt-1">
         <Link className="flex flex-col justify-center items-center " to="/">
-          <AiFillHome size={25} />
+          <AiFillHome size={22} />
           Home
         </Link>
         <Link
           className="flex flex-col justify-center items-center "
           to="/search"
         >
-          <AiOutlineSearch size={25} />
+          <AiOutlineSearch size={22} />
           Search
         </Link>
         <Link
           className="flex flex-col justify-center items-center "
           to="favourites"
         >
-          <LuLibrary size={25} />
+          <LuLibrary size={22} />
           Library
         </Link>
       </div>
