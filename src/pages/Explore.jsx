@@ -51,7 +51,7 @@ const Explore = () => {
       {/* Top Div */}
       <div>
         {/* Logo for mobile devices */}
-        <div className="md:hidden pl-2 pr-4 flex justify-between items-center">
+        <div className="xl:hidden pl-2 pr-4 flex justify-between items-center">
           <img src={logo2} alt="" className="h-[40px] w-[120px]" />
           <button
             onClick={() => {
@@ -81,17 +81,17 @@ const Explore = () => {
         {/* Trendings (song) */}
         <div className="flex flex-col gap-3 mt-3">
           {/* Trendings Title */}
-          <div className="flex justify-between max-lg:px-3 mb-1">
+          <div className="flex justify-between max-xl:px-3 mb-1">
             <h3 className="text-3xl font-[600] ">Trending</h3>
             <Link
-              className="text-gray-700 cursor-pointer lg:mr-3"
+              className="text-gray-700 cursor-pointer xl:mr-3"
               to="/trendings"
             >
               see more...
             </Link>
           </div>
           {/* Trendings Wrapper */}
-          <div className="flex gap-5 max-lg:gap-0 overflow-y-hidden no-scrollbar">
+          <div className="flex gap-5 max-xl:gap-0 overflow-y-hidden no-scrollbar">
             {trendings?.data?.songs?.slice(0, 11).map((song, i) => (
               <div key={song?.id}>
                 <SongCard song={song} data={trendings?.data?.songs} i={i} />
@@ -102,21 +102,21 @@ const Explore = () => {
       </div>
 
       {/* Bottom Div */}
-      <div className="flex mt-7 max-lg:flex-col ">
+      <div className="flex mt-7 max-xl:flex-col ">
         {/* Top Charts */}
-        <div className="w-[68%] max-lg:w-full  max-lg:overflow-auto ">
+        <div className="w-[68%] max-xl:w-full  max-lg:overflow-auto ">
           {/* Top Charts Title*/}
-          <div className="flex justify-between items-center max-lg:px-3 mb-1">
+          <div className="flex justify-between items-center max-xl:px-3 mb-1">
             <h3 className="text-3xl font-[600] ">
-              Top <br className="lg:hidden" />
+              Top <br className="xl:hidden" />
               Charts
             </h3>
-            <Link className="text-gray-700 cursor-pointer lg:mr-6" to="/charts">
+            <Link className="text-gray-700 cursor-pointer xl:mr-6" to="/charts">
               see more...
             </Link>
           </div>
           {/* Top Charts Wrapper*/}
-          <div className="flex gap-5 max-lg:gap-1 lg:flex-wrap  overflow-auto no-scrollbar max-lg:overflow-auto max-lg:w-full max-lg:h-[200px] mt-5 mb-3">
+          <div className="flex gap-5 max-xl:gap-1 xl:flex-wrap  overflow-auto no-scrollbar max-xl:overflow-auto max-xl:w-full max-xl:h-[200px] mt-5 mb-3">
             {charts?.slice(0, 15).map((chart, i) => {
               return (
                 <div key={chart?.id}>
@@ -128,9 +128,9 @@ const Explore = () => {
         </div>
 
         {/* Albums */}
-        <div className="w-[32%] max-lg:w-full ">
+        <div className="w-[32%] max-xl:w-full ">
           {/* Albums Title */}
-          <div className="flex justify-between items-center max-lg:px-3">
+          <div className="flex justify-between items-center max-xl:px-3">
             <h3 className="text-3xl font-[600] ">Albums</h3>
             <Link className="text-gray-700 cursor-pointer mr-3" to="/albums">
               see more...
