@@ -16,12 +16,10 @@ import { BsSearch } from "react-icons/bs";
 import { useGetSearchResultQuery } from "../redux/saavn";
 import { useNavigate, useParams } from "react-router-dom";
 
-import logo from "../assets/groov_icon.png"
-import logo2 from "../assets/groov_icon_2.png"
+import logo from "../assets/groov_icon.png";
+import logo2 from "../assets/groov_icon_2.png";
 
-import {ImGithub} from "react-icons/im"
-
-
+import { ImGithub } from "react-icons/im";
 
 const Explore = () => {
   const { data: homePageData } = useGetHomePageDataQuery();
@@ -53,12 +51,20 @@ const Explore = () => {
       {/* Top Div */}
       <div>
         {/* Logo for mobile devices */}
-        <div className="lg:hidden pl-4 pr-5 py-4 flex justify-between items-center">
-          <img src={logo2} alt="" className="h-[50px] w-[150px]"/>
-          <ImGithub size={30}/>
+        <div className="md:hidden pl-2 pr-5 py-3 flex justify-between items-center">
+          <img src={logo2} alt="" className="h-[50px] w-[150px]" />
+          <button
+            onClick={() => {
+              window.open(
+                "https://github.com/Animesh-Chakrabarty/Project-Music-Player"
+              );
+            }}
+          >
+            <ImGithub size={30} />
+          </button>
         </div>
         {/* Search Bar */}
-        <div className=" flex justify-center items-end mt-5  mb-3">
+        <div className=" flex justify-center items-end mt-5  mb-5">
           <form action="" className="flex gap-3 ">
             <input
               type="text"
@@ -67,11 +73,10 @@ const Explore = () => {
               className="outline-none px-6 py-1"
             />
             <button onClick={handleSubmit} className="">
-              <BsSearch size={20}/>
+              <BsSearch size={20} />
             </button>
           </form>
         </div>
-
 
         {/* Trendings (song) */}
         <div className="flex flex-col gap-3 mt-3">
@@ -86,7 +91,7 @@ const Explore = () => {
             </Link>
           </div>
           {/* Trendings Wrapper */}
-          <div className="flex gap-5 max-lg:gap-0 overflow-auto no-scrollbar">
+          <div className="flex gap-5 max-lg:gap-0 overflow-y-hidden no-scrollbar">
             {trendings?.data?.songs?.slice(0, 11).map((song, i) => (
               <div key={song?.id}>
                 <SongCard song={song} data={trendings?.data?.songs} i={i} />
