@@ -25,7 +25,8 @@ const App = () => {
       {/* Mobile View */}
       <div>
         {/* Mobile audio Player */}
-        <div>
+        <div className="md:hidden">
+          <AudioPlayer/>
         </div>
         {/* Mobile Nav */}
         <div className="md:hidden h-[60px] w-full mobile-nav-bg bottom-0 absolute flex justify-between items-center text-gray-200 px-10 text-[17px] pt-1 bg-opacity-70 bg-[#803bc0]">

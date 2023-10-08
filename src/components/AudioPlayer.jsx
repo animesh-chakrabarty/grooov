@@ -34,35 +34,59 @@ const AudioPlayer = () => {
   };
 
   return (
-    <div className="mt-[70%]">
-      <div className="bg-[#D9C9F2] flex flex-col">
-        <h2 className="text-xl font-bold">
-          {data[currentSongIndex]?.name}
-        </h2>
-        <div className="flex justify-between items-center my-4">
-          <button onClick={handlePrevSong} className="outline-none">
-            <BiSolidSkipPreviousCircle size={40} color="black" />
-          </button>
-          {isPlaying ? (
-            <button onClick={handlePause} className="outline-none">
-              <BsFillPauseCircleFill size={40} color="black" />
+    <div>
+      {/* Mobile Audio Player */}
+      <div className="md:hidden absolute bottom-[62px] w-full px-5 py-1 flex justify-center ">
+        <div className="flex justify-between items-center w-[90%] bg-[#D9C9F2]">
+          <h2 className="w-1/2 truncate">{data[currentSongIndex]?.name}</h2>
+          <div className="flex gap-1">
+            <button onClick={handlePrevSong} className="outline-none">
+              <BiSolidSkipPreviousCircle size={40} color="black" />
             </button>
-          ) : (
-            <button onClick={handlePlay} className="outline-none">
-              <AiFillPlayCircle size={40} color="black" />
+            {isPlaying ? (
+              <button onClick={handlePause} className="outline-none">
+                <BsFillPauseCircleFill size={40} color="black" />
+              </button>
+            ) : (
+              <button onClick={handlePlay} className="outline-none">
+                <AiFillPlayCircle size={40} color="black" />
+              </button>
+            )}
+            <button onClick={handleNextSong} className="outline-none">
+              <BiSolidSkipNextCircle size={40} color="black" />
             </button>
-          )}
-          <button onClick={handleNextSong} className="outline-none">
-            <BiSolidSkipNextCircle size={40} color="black" />
-          </button>
+          </div>
         </div>
       </div>
-      <ReactPlayer
-        url={data[currentSongIndex]?.downloadUrl[4]?.link}
-        playing={isPlaying}
-        onPlay={handlePlay}
-        onPause={handlePause}
-      />
+      {/* Desktop Audio Player */}
+      <div className="max-md:hidden mt-[70%]">
+        <div className="bg-[#D9C9F2] flex flex-col">
+          <h2 className="text-xl font-bold">{data[currentSongIndex]?.name}</h2>
+          <div className="flex justify-between items-center my-4">
+            <button onClick={handlePrevSong} className="outline-none">
+              <BiSolidSkipPreviousCircle size={40} color="black" />
+            </button>
+            {isPlaying ? (
+              <button onClick={handlePause} className="outline-none">
+                <BsFillPauseCircleFill size={40} color="black" />
+              </button>
+            ) : (
+              <button onClick={handlePlay} className="outline-none">
+                <AiFillPlayCircle size={40} color="black" />
+              </button>
+            )}
+            <button onClick={handleNextSong} className="outline-none">
+              <BiSolidSkipNextCircle size={40} color="black" />
+            </button>
+          </div>
+        </div>
+        <ReactPlayer
+          url={data[currentSongIndex]?.downloadUrl[4]?.link}
+          playing={isPlaying}
+          onPlay={handlePlay}
+          onPause={handlePause}
+        />
+      </div>
     </div>
   );
 };
