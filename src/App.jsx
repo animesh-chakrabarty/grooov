@@ -24,7 +24,7 @@ const App = () => {
       </div>
       {/* Body */}
       {/* Mobile Nav */}
-      <div className="md:hidden h-[60px] w-full mobile-nav-bg bottom-0 absolute flex justify-between items-center text-white px-10 text-[17px] pt-1">
+      <div className="md:hidden h-[60px] w-full mobile-nav-bg bottom-0 absolute flex justify-between items-center text-white px-10 text-[17px] pt-1 bg-opacity-70 bg-[#803bc0]">
         <Link className="flex flex-col justify-center items-center " to="/">
           <AiFillHome size={22} />
           Home
