@@ -65,7 +65,7 @@ const Explore = () => {
         <div className="flex flex-col gap-3 mt-3">
           {/* Trendings Title */}
           <div className="flex justify-between max-lg:px-3 mb-1">
-            <h3 className="text-2xl font-bold ">Trending</h3>
+            <h3 className="text-3xl font-[600] font-jost">Trending</h3>
             <Link
               className="text-gray-700 cursor-pointer lg:mr-3"
               to="/trendings"
@@ -90,7 +90,7 @@ const Explore = () => {
         <div className="w-3/4 max-lg:w-full  max-lg:overflow-auto ">
           {/* Top Charts Title*/}
           <div className="flex justify-between items-center max-lg:px-3 mb-1">
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-3xl font-[600] font-jost">
               Top <br className="lg:hidden" />
               Charts
             </h3>
@@ -114,7 +114,7 @@ const Explore = () => {
         <div className="w-[35%] max-lg:w-full b">
           {/* Albums Title */}
           <div className="flex justify-between items-center max-lg:px-3">
-            <h3 className="text-2xl font-bold">Albums</h3>
+            <h3 className="text-3xl font-[600] font-jost">Albums</h3>
             <Link className="text-gray-700 cursor-pointer mr-3" to="/albums">
               see more...
             </Link>

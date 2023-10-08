@@ -11,7 +11,7 @@ import logo from "../assets/groov_icon.png"
 
 const Sidebar = () => {
   return (
-    <div className="m-2 ">
+    <div className="m-2 font-jost">
       {/* Hi , Welcome to Groov div */}
       <div className="cursor-pointer intro">
         <div>
