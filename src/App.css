@@ -20,12 +20,15 @@
 
 .wrapper{
     background: linear-gradient(to bottom right ,#3D3459 , #171335 , #383055);
-    /* padding: 15px; */
 }
 
 .mobile-nav-bg{
     /* background: linear-gradient(to bottom right ,#3D3459 , #171335 , #383055); */
-    background-color: #2F2F2F;
+    background-color: #286d6d;
+    /* border-top-right-radius: 100px; */
+    /* border-top-left-radius: 100px; */
+    border-radius: 35px;
+
 }
 
 body{
