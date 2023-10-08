@@ -37,7 +37,7 @@ const AudioPlayer = () => {
     <div>
       {/* Mobile Audio Player */}
       <div className="md:hidden absolute bottom-[62px] w-full px-5 py-1 flex justify-center ">
-        <div className="flex justify-between items-center w-[90%] bg-[#D9C9F2]">
+        <div className="py-1 rounded-lg px-2 flex justify-between items-center w-[90%] bg-[#D9C9F2]">
           <h2 className="w-1/2 truncate">{data[currentSongIndex]?.name}</h2>
           <div className="flex gap-1">
             <button onClick={handlePrevSong} className="outline-none">
