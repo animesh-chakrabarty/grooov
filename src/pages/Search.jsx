@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useGetSearchResultQuery } from "../redux/saavn";
 import { useNavigate, useParams } from "react-router-dom";
-import {BsSearch} from "react-icons/bs"
+import { BsSearch } from "react-icons/bs";
 import AlbumCard from "../components/AlbumCard";
 import SongCard from "../components/SongCard";
+import { ImGithub } from "react-icons/im";
+import logo2 from "../assets/groov_icon_2.png";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -23,24 +25,31 @@ const Search = () => {
   console.log(searchResult);
 
   return (
-    <div className="py-5">
-      <div className="searchBox flex items-center justify-center mb-10">
-        <form
-          action="submit"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
+    <div className="">
+      {/* Logo for mobile devices */}
+      <div className="md:hidden pl-2 pr-5 flex justify-between items-center">
+        <img src={logo2} alt="" className="h-[50px] w-[150px]" />
+        <button
+          onClick={() => {
+            window.open(
+              "https://github.com/Animesh-Chakrabarty/Project-Music-Player"
+            );
           }}
-          className="flex gap-5 items-center"
         >
+          <ImGithub size={30} />
+        </button>
+      </div>
+      {/* Search Bar */}
+      <div className=" flex justify-center items-end mt-3 mb-4 ">
+        <form action="" className="flex gap-3 ">
           <input
             type="text"
-            placeholder="Search for a song..."
+            placeholder="Search for a song , album ..."
             onChange={(e) => setInput(e.target.value)}
-            className="border-2 outline-none px-5 py-1 rounded-lg text-lg"
+            className="outline-none px-6 py-1"
           />
-          <button onClick={handleSubmit}>
-            <BsSearch size={30}/>
+          <button onClick={handleSubmit} className="">
+            <BsSearch size={20} />
           </button>
         </form>
       </div>
