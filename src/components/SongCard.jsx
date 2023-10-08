@@ -14,7 +14,7 @@ import AudioPlayer from "./AudioPlayer";
 
 const SongCard = ({ data, song, i }) => {
   // console.log(i);
-  console.log(data);
+  // console.log(data);
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.player.isPlaying);
   const currentSongIndex = useSelector(
@@ -22,7 +22,7 @@ const SongCard = ({ data, song, i }) => {
   );
 
   const handlePlay = () => {
-    console.log("played");
+    // console.log("played");
     dispatch(play());
   };
 

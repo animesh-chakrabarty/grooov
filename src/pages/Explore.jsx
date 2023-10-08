@@ -28,15 +28,15 @@ const Explore = () => {
   const charts = homePageData?.data?.playlists;
   const albums = homePageData?.data?.trending?.albums;
 
-  console.log(charts);
+  // console.log(charts);
 
   const navigate = useNavigate();
   const [input, setInput] = useState("");
   const { searchTerm } = useParams();
 
-  console.log("x" + searchTerm);
+  // console.log("x" + searchTerm);
   let { data: searchResult } = useGetSearchResultQuery(searchTerm);
-  console.log(searchResult);
+  // console.log(searchResult);
 
   const handleSubmit = () => {
     console.log("searched for " + input);
@@ -44,7 +44,7 @@ const Explore = () => {
   };
 
   searchResult = searchResult?.data?.results;
-  console.log(searchResult);
+  // console.log(searchResult);
 
   return (
     <div className="">

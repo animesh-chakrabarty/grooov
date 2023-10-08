@@ -1,7 +1,7 @@
 import React from "react";
 
 const AlbumCard = ({ album }) => {
-  console.log(album);
+  // console.log(album);
   return (
     <div className="bg-[#edeaf3] w-full h-[80px] flex justify-between items-center px-2 text-left overflow-hidden bg-opacity-60 cursor-pointer hover:bg-opacity-100 rounded-xl">
       <img
