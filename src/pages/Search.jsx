@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useGetSearchResultQuery } from "../redux/saavn";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchInput } from "../redux/searchSlice";
+
 import { BsSearch } from "react-icons/bs";
 import AlbumCard from "../components/AlbumCard";
 import SongCard from "../components/SongCard";
@@ -9,15 +12,19 @@ import logo2 from "../assets/groov_icon_2.png";
 
 const Search = () => {
   const navigate = useNavigate();
-  const [input, setInput] = useState("");
+  const dispatch = useDispatch();
+  const searchInput = useSelector((state) => state?.search);
   const { searchTerm } = useParams();
 
-  console.log("x" + searchTerm);
+  const [input, setInput] = useState("");
+
   let { data: searchResult } = useGetSearchResultQuery(searchTerm);
   console.log(searchResult);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log("searched for " + input);
+    // dispatch(setSearchInput(searchTerm));
     navigate(`/search/${input}`);
   };
 
@@ -41,7 +48,7 @@ const Search = () => {
       </div>
       {/* Search Bar */}
       <div className=" flex justify-center items-end mt-3 mb-4 ">
-        <form action="" className="flex gap-3 ">
+        <form action="" className="flex gap-3 " >
           <input
             type="text"
             placeholder="Search for a song , album ..."
@@ -53,6 +60,7 @@ const Search = () => {
           </button>
         </form>
       </div>
+      {/* Search Wrapper */}
       <div>
         {searchTerm !== undefined && (
           <div className="resultWrapper flex gap-3 flex-wrap xl:ml-5">
