@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useGetSearchResultQuery } from "../redux/saavn";
 import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { setSearchInput } from "../redux/searchSlice";
 
 import { BsSearch } from "react-icons/bs";
 import AlbumCard from "../components/AlbumCard";
@@ -12,11 +10,9 @@ import logo2 from "../assets/groov_icon_2.png";
 
 const Search = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const searchInput = useSelector((state) => state?.search);
   const { searchTerm } = useParams();
 
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(searchTerm);
 
   let { data: searchResult } = useGetSearchResultQuery(searchTerm);
   console.log(searchResult);
@@ -24,7 +20,6 @@ const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("searched for " + input);
-    // dispatch(setSearchInput(searchTerm));
     navigate(`/search/${input}`);
   };
 
@@ -48,12 +43,13 @@ const Search = () => {
       </div>
       {/* Search Bar */}
       <div className=" flex justify-center items-end mt-3 mb-4 ">
-        <form action="" className="flex gap-3 " >
+        <form action="" className="flex gap-3 ">
           <input
             type="text"
             placeholder="Search for a song , album ..."
             onChange={(e) => setInput(e.target.value)}
             className="outline-none px-6 py-1"
+            value={input}
           />
           <button onClick={handleSubmit} className="">
             <BsSearch size={20} />

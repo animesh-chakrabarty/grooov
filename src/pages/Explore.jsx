@@ -39,11 +39,11 @@ const Explore = () => {
   // console.log(searchResult);
 
   const handleSubmit = () => {
-    console.log("searched for " + input);
+    // console.log("searched for " + input);
     navigate(`/search/${input}`);
   };
 
-  searchResult = searchResult?.data?.results;
+  // searchResult = searchResult?.data?.results;
   // console.log(searchResult);
 
   return (
