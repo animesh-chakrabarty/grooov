@@ -8,7 +8,7 @@ const SongsWrapper = ({ data }) => {
       {/* Title */}
       <div className="pl-4 pb-4 text-3xl font-[600] ">Songs</div>
       {/* Wrapper */}
-      <div className="flex xl:flex-wrap xl:gap-4 h-[50%]  ">
+      <div className="flex xl:flex-wrap xl:gap-5 overflow-auto no-scrollbar  overflow-y-hidden">
         {data?.slice(0,12)?.map((song, i) => (
           <div key={song?.id}>
             <SongCard i={i} data={data} song={song} />
