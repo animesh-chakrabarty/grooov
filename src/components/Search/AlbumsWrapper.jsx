@@ -1,8 +1,9 @@
 import React from 'react'
 
-const AlbumsWrapper = () => {
+const AlbumsWrapper = ({data}) => {
+    console.log(data)
   return (
-    <div>AlbumsWrapper</div>
+    <div className="h-[100px] w-full bg-red-500"></div>
   )
 }
 

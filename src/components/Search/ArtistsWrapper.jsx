@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 
-const ArtistsWrapper = () => {
-  return (
-    <div>ArtistsWrapper</div>
-  )
-}
+const ArtistsWrapper = ({ data }) => {
+  console.log(data);
+  return <div className="h-[100px] w-full bg-blue-500"></div>;
+};
 
-export default ArtistsWrapper
+export default ArtistsWrapper;

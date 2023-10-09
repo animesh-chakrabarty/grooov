@@ -13,8 +13,7 @@ import AlbumCard from "../components/AlbumCard";
 
 import { BsSearch } from "react-icons/bs";
 
-import { useGetSearchResultQuery } from "../redux/saavn";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/groov_icon.png";
 import logo2 from "../assets/groov_icon_2.png";
@@ -32,11 +31,8 @@ const Explore = () => {
 
   const navigate = useNavigate();
   const [input, setInput] = useState("");
-  const { searchTerm } = useParams();
 
-  // console.log("x" + searchTerm);
-  let { data: searchResult } = useGetSearchResultQuery(searchTerm);
-  // console.log(searchResult);
+  
 
   const handleSubmit = () => {
     // console.log("searched for " + input);

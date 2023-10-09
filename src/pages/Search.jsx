@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { useGetSearchResultQuery } from "../redux/saavn";
+import {
+  useGetSongSearchResultQuery,
+  useGetAlbumSearchResultQuery,
+  useGetArtistSearchResultQuery,
+} from "../redux/saavn";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { BsSearch } from "react-icons/bs";
@@ -7,6 +11,9 @@ import AlbumCard from "../components/AlbumCard";
 import SongCard from "../components/SongCard";
 import { ImGithub } from "react-icons/im";
 import logo2 from "../assets/groov_icon_2.png";
+import SongsWrapper from "../components/Search/SongsWrapper";
+import AlbumsWrapper from "../components/Search/AlbumsWrapper";
+import ArtistsWrapper from "../components/Search/ArtistsWrapper";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -14,8 +21,17 @@ const Search = () => {
 
   const [input, setInput] = useState(searchTerm);
 
-  let { data: searchResult } = useGetSearchResultQuery(searchTerm);
-  console.log(searchResult);
+  let { data: songSearchResult } = useGetSongSearchResultQuery(searchTerm);
+  let { data: albumSearchResult } = useGetAlbumSearchResultQuery(searchTerm);
+  let { data: artistSearchResult } = useGetArtistSearchResultQuery(searchTerm);
+
+  songSearchResult = songSearchResult?.data?.results;
+  albumSearchResult = albumSearchResult?.data?.results;
+  artistSearchResult = artistSearchResult?.data?.results;
+
+  console.log(songSearchResult);
+  console.log(albumSearchResult);
+  console.log(artistSearchResult);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,11 +39,10 @@ const Search = () => {
     navigate(`/search/${input}`);
   };
 
-  searchResult = searchResult?.data?.results;
-  console.log(searchResult);
+  // console.log(searchResult);
 
   return (
-    <div className="">
+    <div className="h-full w-full">
       {/* Logo for mobile devices */}
       <div className="xl:hidden pl-2 pr-5 flex justify-between items-center">
         <img src={logo2} alt="" className="h-[50px] w-[150px]" />
@@ -57,15 +72,13 @@ const Search = () => {
         </form>
       </div>
       {/* Search Wrapper */}
-      <div>
-        {searchTerm !== undefined && (
-          <div className="resultWrapper flex gap-3 flex-wrap xl:ml-5">
-            {searchResult?.map((song, i) => (
-              <SongCard key={song?.id} song={song} i={i} data={searchResult} />
-            ))}
-          </div>
-        )}
-      </div>
+      {searchTerm !== undefined && (
+        <div className=" h-[100%] flex flex-col items-center xl:px-7">
+          <SongsWrapper data={songSearchResult} />
+          <AlbumsWrapper data={albumSearchResult} />
+          <ArtistsWrapper data={artistSearchResult} />
+        </div>
+      )}
     </div>
   );
 };
