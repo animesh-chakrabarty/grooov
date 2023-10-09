@@ -12,6 +12,9 @@ export const saavnApi = createApi({
     getPlaylistDetails: builder.query({
       query: (params) => `playlists?id=${params}`,
     }),
+    getAlbumDetails: builder.query({
+      query: (params) => `albums?id=${params}`,
+    }),
     getSongSearchResult: builder.query({
       query: (params) => `search/songs?query=${params}&page=1&limit=20`,
     }),
@@ -27,7 +30,8 @@ export const saavnApi = createApi({
 export const {
   useGetHomePageDataQuery,
   useGetPlaylistDetailsQuery,
+  useGetAlbumDetailsQuery,
   useGetSongSearchResultQuery,
   useGetAlbumSearchResultQuery,
-  useGetArtistSearchResultQuery
+  useGetArtistSearchResultQuery,
 } = saavnApi;

@@ -20,6 +20,9 @@ const SongCard = ({ data, song, i }) => {
   const currentSongIndex = useSelector(
     (state) => state.player.currentSongIndex
   );
+  const currentPlayingData = useSelector((state) => state.player.data);
+
+  const flag = JSON.stringify(currentPlayingData) === JSON.stringify(data);
 
   const handlePlay = () => {
     // console.log("played");
@@ -39,7 +42,7 @@ const SongCard = ({ data, song, i }) => {
       />
 
       <div className="absolute flex items-center justify-center h-[200px] w-[185px] ">
-        {isPlaying && currentSongIndex === i ? (
+        {isPlaying && currentSongIndex === i && flag ? (
           <button
             className="px-2 py-1 text-xl group-hover:flex hidden"
             onClick={handlePause}

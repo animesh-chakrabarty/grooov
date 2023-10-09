@@ -29,9 +29,9 @@ const Search = () => {
   albumSearchResult = albumSearchResult?.data?.results;
   artistSearchResult = artistSearchResult?.data?.results;
 
-  console.log(songSearchResult);
-  console.log(albumSearchResult);
-  console.log(artistSearchResult);
+  // console.log(songSearchResult);
+  // console.log(albumSearchResult);
+  // console.log(artistSearchResult);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,9 +73,13 @@ const Search = () => {
       </div>
       {/* Search Wrapper */}
       {searchTerm !== undefined && (
-        <div className=" h-[100%] flex flex-col items-center xl:px-7">
-          <SongsWrapper data={songSearchResult} />
-          <AlbumsWrapper data={albumSearchResult} />
+        <div className=" h-[100%] flex flex-col  xl:px-7">
+          <div>
+            <SongsWrapper data={songSearchResult} />
+          </div>
+          <div>
+            <AlbumsWrapper data={albumSearchResult} />
+          </div>
           <ArtistsWrapper data={artistSearchResult} />
         </div>
       )}
