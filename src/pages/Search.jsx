@@ -72,7 +72,7 @@ const Search = () => {
       </div>
       {/* Search Wrapper */}
       {searchTerm !== undefined && (
-        <div className=" h-[100%] flex flex-col  xl:px-7">
+        <div className="flex flex-col  xl:px-7">
           <div>
             <SongsWrapper data={songSearchResult} />
           </div>
