@@ -48,7 +48,7 @@ const AlbumCardRect = ({ data, album }) => {
           <div className="w-[100%] text-left mt-2 pl-2">
             <h1 className="truncate text-xl font-[600]">{album?.name}</h1>
             <h3 className="truncate text-[14px]">
-              {album?.primaryArtists[0]?.name}
+              {album?.artists[0]?.name}
             </h3>
           </div>
           {/* Buttons */}

@@ -10,6 +10,7 @@ import ChartCard from "../components/ChartCard";
 
 import { Link } from "react-router-dom";
 import AlbumCard from "../components/AlbumCard";
+import AlbumCardRect from "../components/AlbumCardRect";
 
 import { BsSearch } from "react-icons/bs";
 
@@ -27,7 +28,7 @@ const Explore = () => {
   const charts = homePageData?.data?.playlists;
   const albums = homePageData?.data?.trending?.albums;
 
-  // console.log(charts);
+  // console.log(albums);
 
   const navigate = useNavigate();
   const [input, setInput] = useState("");
@@ -98,9 +99,9 @@ const Explore = () => {
       </div>
 
       {/* Bottom Div */}
-      <div className="flex mt-7 max-xl:flex-col ">
+      <div className="flex mt-7 max-xl:flex-col xl:justify-center">
         {/* Top Charts */}
-        <div className="w-[68%] max-xl:w-full  max-lg:overflow-auto ">
+        <div className=" w-[65%] max-xl:w-full  max-lg:overflow-auto ">
           {/* Top Charts Title*/}
           <div className="flex justify-between items-center max-xl:px-3 mb-1">
             <h3 className="text-3xl font-[600] ">
@@ -124,7 +125,7 @@ const Explore = () => {
         </div>
 
         {/* Albums */}
-        <div className="w-[32%] max-xl:w-full ">
+        <div className=" w-[35%] max-xl:w-full ">
           {/* Albums Title */}
           <div className="flex justify-between items-center max-xl:px-3">
             <h3 className="text-3xl font-[600] ">Albums</h3>
@@ -133,11 +134,11 @@ const Explore = () => {
             </Link>
           </div>
           {/* Albums Wrapper */}
-          <div className="flex flex-col justify-start gap-3 mt-5 ">
-            {albums?.slice(0, 7).map((album) => {
+          <div className="flex xl:flex-wrap max-xl:overflow-auto no-scrollbar justify-start gap-5 max-xl:gap-1  mt-5 ">
+            {albums?.slice(0,8).map((album) => {
               return (
                 <div key={album?.id}>
-                  <AlbumCard album={album} />
+                  <AlbumCardRect album={album} />
                 </div>
               );
             })}

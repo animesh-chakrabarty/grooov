@@ -43,9 +43,8 @@ const Search = () => {
 
   return (
     <div className="h-full w-full">
-      {/* Logo for mobile devices */}
-      <div className="xl:hidden pl-2 pr-5 flex justify-between items-center">
-        <img src={logo2} alt="" className="h-[50px] w-[150px]" />
+      <div className="xl:hidden pl-2 pr-4 flex justify-between items-center">
+        <img src={logo2} alt="" className="h-[40px] w-[120px]" />
         <button
           onClick={() => {
             window.open(
@@ -53,7 +52,7 @@ const Search = () => {
             );
           }}
         >
-          <ImGithub size={30} />
+          <ImGithub size={25} />
         </button>
       </div>
       {/* Search Bar */}
@@ -80,7 +79,9 @@ const Search = () => {
           <div>
             <AlbumsWrapper data={albumSearchResult} />
           </div>
-          <ArtistsWrapper data={artistSearchResult} />
+          {/* <div>
+            <ArtistsWrapper data={artistSearchResult} />
+          </div> */}
         </div>
       )}
     </div>

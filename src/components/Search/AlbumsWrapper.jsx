@@ -2,7 +2,7 @@ import React from "react";
 import AlbumCardRect from "../AlbumCardRect";
 
 const AlbumsWrapper = ({ data }) => {
-//   console.log(data);
+  // console.log(data);
   return (
     <div className="flex flex-col xl:items-center  no-scrollbar w-full h-full overflow-auto overflow-y-hidden mb-5">
       <div className="pl-4 pb-4 text-3xl font-[600] ">Albums</div>
