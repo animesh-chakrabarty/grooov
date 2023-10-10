@@ -10,7 +10,6 @@ import ChartCard from "../components/ChartCard";
 
 import { Link } from "react-router-dom";
 import AlbumCard from "../components/AlbumCard";
-import AlbumCardRect from "../components/AlbumCardRect";
 
 import { BsSearch } from "react-icons/bs";
 
@@ -138,7 +137,7 @@ const Explore = () => {
             {albums?.slice(0,8).map((album) => {
               return (
                 <div key={album?.id}>
-                  <AlbumCardRect album={album} />
+                  <AlbumCard album={album} />
                 </div>
               );
             })}

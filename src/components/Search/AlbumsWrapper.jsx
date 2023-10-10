@@ -1,5 +1,5 @@
 import React from "react";
-import AlbumCardRect from "../AlbumCardRect";
+import AlbumCard from "../AlbumCard";
 
 const AlbumsWrapper = ({ data }) => {
   // console.log(data);
@@ -9,7 +9,7 @@ const AlbumsWrapper = ({ data }) => {
       <div className="flex xl:flex-wrap xl:justify-center xl:gap-5 overflow-auto no-scrollbar overflow-y-hidden">
         {data?.map((album) => (
           <div key={album?.id}>
-            <AlbumCardRect data={data} album={album} />
+            <AlbumCard data={data} album={album} />
           </div>
         ))}
       </div>
