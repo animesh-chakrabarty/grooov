@@ -22,12 +22,13 @@ import { ImGithub } from "react-icons/im";
 
 const Explore = () => {
   const { data: homePageData } = useGetHomePageDataQuery();
-  const { data: trendings } = useGetPlaylistDetailsQuery("110858205");
-
+  
+  const { data: trendings } = useGetPlaylistDetailsQuery("47599074");
   const charts = homePageData?.data?.playlists;
   const albums = homePageData?.data?.trending?.albums;
-
-  // console.log(albums);
+  
+  console.log(charts);
+  console.log(albums)
 
   const navigate = useNavigate();
   const [input, setInput] = useState("");

@@ -5,7 +5,10 @@ import Search from "./pages/Search";
 import Albums from "./pages/Albums";
 import Trendings from "./pages/Trendings";
 import Charts from "./pages/Charts";
+import ChartView from "./pages/ChartView";
+
 import Favourites from "./pages/Favourites";
+
 
 import { AiFillHome } from "react-icons/ai";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -58,7 +61,7 @@ const App = () => {
           <Route path="/albums" element={<Albums />}></Route>
           <Route path="/trendings" element={<Trendings />}></Route>
           <Route path="/charts" element={<Charts />}></Route>
-          <Route path="/charts/:chartId" element={<Charts />}></Route>
+          <Route path="/charts/:chartId" element={<ChartView />}></Route>
           <Route path="/favourites" element={<Favourites />}></Route>
         </Routes>
       </div>
