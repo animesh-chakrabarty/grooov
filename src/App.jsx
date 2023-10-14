@@ -2,11 +2,7 @@ import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Explore from "./pages/Explore";
 import Search from "./pages/Search";
-import Albums from "./pages/Albums";
-import Trendings from "./pages/Trendings";
-import Charts from "./pages/Charts";
 import ChartView from "./pages/ChartView";
-
 import Favourites from "./pages/Favourites";
 
 
@@ -58,9 +54,6 @@ const App = () => {
           <Route path="/" element={<Explore />}></Route>
           <Route path="/search" element={<Search />}></Route>
           <Route path="/search/:searchTerm" element={<Search />}></Route>
-          <Route path="/albums" element={<Albums />}></Route>
-          <Route path="/trendings" element={<Trendings />}></Route>
-          <Route path="/charts" element={<Charts />}></Route>
           <Route path="/charts/:chartId" element={<ChartView />}></Route>
           <Route path="/favourites" element={<Favourites />}></Route>
         </Routes>

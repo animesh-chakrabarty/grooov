@@ -22,18 +22,16 @@ import { ImGithub } from "react-icons/im";
 
 const Explore = () => {
   const { data: homePageData } = useGetHomePageDataQuery();
-  
+
   const { data: trendings } = useGetPlaylistDetailsQuery("47599074");
   const charts = homePageData?.data?.playlists;
   const albums = homePageData?.data?.trending?.albums;
-  
+
   console.log(charts);
-  console.log(albums)
+  console.log(albums);
 
   const navigate = useNavigate();
   const [input, setInput] = useState("");
-
-  
 
   const handleSubmit = () => {
     // console.log("searched for " + input);
@@ -80,12 +78,6 @@ const Explore = () => {
           {/* Trendings Title */}
           <div className="flex justify-between max-xl:px-3 mb-1">
             <h3 className="text-3xl font-[600] ">Trending</h3>
-            <Link
-              className="text-gray-700 cursor-pointer xl:mr-3"
-              to="/trendings"
-            >
-              see more...
-            </Link>
           </div>
           {/* Trendings Wrapper */}
           <div className="flex gap-5 max-xl:gap-0 overflow-y-hidden no-scrollbar">
@@ -108,9 +100,6 @@ const Explore = () => {
               Top <br className="xl:hidden" />
               Charts
             </h3>
-            <Link className="text-gray-700 cursor-pointer xl:mr-6" to="/charts">
-              see more...
-            </Link>
           </div>
           {/* Top Charts Wrapper*/}
           <div className="flex gap-5 max-xl:gap-1 xl:flex-wrap  overflow-auto no-scrollbar max-xl:overflow-auto max-xl:w-full max-xl:h-[200px] mt-5 mb-3">
@@ -129,13 +118,10 @@ const Explore = () => {
           {/* Albums Title */}
           <div className="flex justify-between items-center max-xl:px-3">
             <h3 className="text-3xl font-[600] ">Albums</h3>
-            <Link className="text-gray-700 cursor-pointer mr-3" to="/albums">
-              see more...
-            </Link>
           </div>
           {/* Albums Wrapper */}
           <div className="flex xl:flex-wrap max-xl:overflow-auto no-scrollbar justify-start gap-5 max-xl:gap-1  mt-5 ">
-            {albums?.slice(0,8).map((album) => {
+            {albums?.slice(0, 8).map((album) => {
               return (
                 <div key={album?.id}>
                   <AlbumCard album={album} />

@@ -7,7 +7,7 @@ import { FaHashtag } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 
-import logo from "../assets/groov_icon.png"
+import logo from "../assets/groov_icon.png";
 
 const Sidebar = () => {
   return (
@@ -20,8 +20,7 @@ const Sidebar = () => {
             <span className="text-xl text-gray-300">Welcome to</span> <br />
           </div>
           <div className="ml-[-10px]">
-
-          <img src={logo} alt="icon" />
+            <img src={logo} alt="icon" />
           </div>
         </div>
       </div>
@@ -45,30 +44,6 @@ const Sidebar = () => {
                 <div className="flex gap-3 hover:text-gray-400">
                   <AiOutlineSearch fontSize={25} color="white" />
                   <p>Search</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/trendings">
-                <div className="flex gap-3 hover:text-gray-400">
-                  <FaHashtag fontSize={25} color="white" />
-                  <p>Trending</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/charts">
-                <div className="flex gap-3 hover:text-gray-400">
-                  <FaChartSimple fontSize={25} color="white" />
-                  <p>Charts</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/albums">
-                <div className="flex gap-3 hover:text-gray-400">
-                  <BiSolidAlbum fontSize={25} color="white" />
-                  <p>Albums</p>
                 </div>
               </Link>
             </li>
