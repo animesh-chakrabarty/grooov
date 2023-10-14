@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   useGetSongSearchResultQuery,
   useGetAlbumSearchResultQuery,
-  useGetArtistSearchResultQuery,
 } from "../redux/saavn";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -13,7 +12,6 @@ import { ImGithub } from "react-icons/im";
 import logo2 from "../assets/groov_icon_2.png";
 import SongsWrapper from "../components/Search/SongsWrapper";
 import AlbumsWrapper from "../components/Search/AlbumsWrapper";
-import ArtistsWrapper from "../components/Search/ArtistsWrapper";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -23,11 +21,9 @@ const Search = () => {
 
   let { data: songSearchResult } = useGetSongSearchResultQuery(searchTerm);
   let { data: albumSearchResult } = useGetAlbumSearchResultQuery(searchTerm);
-  let { data: artistSearchResult } = useGetArtistSearchResultQuery(searchTerm);
 
   songSearchResult = songSearchResult?.data?.results;
   albumSearchResult = albumSearchResult?.data?.results;
-  artistSearchResult = artistSearchResult?.data?.results;
 
   // console.log(songSearchResult);
   // console.log(albumSearchResult);
@@ -42,7 +38,7 @@ const Search = () => {
   // console.log(searchResult);
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full pt-3 ">
       <div className="xl:hidden pl-2 pr-4 flex justify-between items-center">
         <img src={logo2} alt="" className="h-[40px] w-[120px]" />
         <button

@@ -50,15 +50,16 @@ const App = () => {
         </div>
       </div>
       {/* Routes */}
-      <div className="w-[110%] bg-[#FFFFFF] py-3 xl:px-5 max-xl:px-0 md:rounded-3xl xl:mx-4 overflow-auto no-scrollbar xl:m-[15px] max-xl:h-[calc(100%-180px)]">
+      <div className="w-[110%] bg-[#FFFFFF]  xl:px-5 max-xl:px-0 xl:rounded-3xl xl:mx-4 overflow-auto no-scrollbar xl:m-[15px] max-xl:h-[calc(100%-180px)]">
         <Routes>
           <Route path="/" element={<Explore />}></Route>
           <Route path="/search" element={<Search />}></Route>
+          <Route path="/search/:searchTerm" element={<Search />}></Route>
           <Route path="/albums" element={<Albums />}></Route>
           <Route path="/trendings" element={<Trendings />}></Route>
           <Route path="/charts" element={<Charts />}></Route>
+          <Route path="/charts/:chartId" element={<Charts />}></Route>
           <Route path="/favourites" element={<Favourites />}></Route>
-          <Route path="/search/:searchTerm" element={<Search />}></Route>
         </Routes>
       </div>
     </div>

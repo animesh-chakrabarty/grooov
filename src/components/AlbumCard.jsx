@@ -11,8 +11,6 @@ import {
 } from "../redux/playerSlice";
 
 const AlbumCardRect = ({ data, album }) => {
-  //   console.log(data);
-  //   console.log(album)
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.player.isPlaying);
   const currentPlayingData = useSelector((state) => state.player.data);

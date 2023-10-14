@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ChartCard = ({ chart }) => {
-  // console.log(chart)
+  console.log(chart);
 
   // console.log(chart?.songCount)
   // console.log(chart?.title)
 
   return (
-    <Link>
+    <Link to={`/charts/${chart?.id}`}>
       <div className="h-[190px] w-[190px] max-md:h-[175px] max-md:w-[175px] group relative max-xl:ml-3">
         <div className="absolute flex items-center justify-center h-[100%] w-[100%]  ">
           <button className="bg-white opacity-80 px-2 py-1 text-xl group-hover:flex hidden">
@@ -20,13 +20,6 @@ const ChartCard = ({ chart }) => {
           alt=""
           className="object-contain h-[100%] w-[100%] rounded-lg"
         />
-        {/* Song Name & Artist Name
-      <div className="w-[170px] text-left mt-2 pl-2">
-        <h1 className="truncate text-lg font-[600]">{chart?.title}</h1>
-        <h3 className="truncate text-[14px]">
-          SongCount : {chart?.songCount}
-        </h3>
-      </div> */}
       </div>
     </Link>
   );

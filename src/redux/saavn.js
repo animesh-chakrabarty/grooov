@@ -21,9 +21,6 @@ export const saavnApi = createApi({
     getAlbumSearchResult: builder.query({
       query: (params) => `search/albums?query=${params}&page=1&limit=10`,
     }),
-    getArtistSearchResult: builder.query({
-      query: (params) => `search/artists?query=${params}&page=1&limit=10`,
-    }),
   }),
 });
 

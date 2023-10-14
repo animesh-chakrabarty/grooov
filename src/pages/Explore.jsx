@@ -43,7 +43,7 @@ const Explore = () => {
   // console.log(searchResult);
 
   return (
-    <div className="">
+    <div className="pt-3">
       {/* Top Div */}
       <div>
         {/* Logo for mobile devices */}
