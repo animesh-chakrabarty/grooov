@@ -27,7 +27,7 @@ const App = () => {
       {/* Mobile View */}
       <div>
         {/* Mobile Nav */}
-        <div className="xl:hidden h-[60px] w-full mobile-nav-bg bottom-0 absolute flex justify-between items-center text-gray-200 px-10 text-[17px] pt-1 bg-opacity-70 bg-[#803bc0]">
+        <div className="xl:hidden h-[60px] w-full mobile-nav-bg bottom-0 absolute flex justify-around items-center text-gray-200 px-10 text-[17px] pt-1 bg-opacity-70 bg-[#803bc0]">
           <Link className="flex flex-col justify-center items-center " to="/">
             <AiFillHome size={22} />
             Home
@@ -39,13 +39,13 @@ const App = () => {
             <AiOutlineSearch size={22} />
             Search
           </Link>
-          <Link
+          {/* <Link
             className="flex flex-col justify-center items-center "
             to="favourites"
           >
             <LuLibrary size={22} />
             Library
-          </Link>
+          </Link> */}
         </div>
       </div>
       {/* Routes */}

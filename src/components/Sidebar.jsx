@@ -47,14 +47,14 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/favourites">
                 <div className="flex gap-3 hover:text-gray-400">
                   <BsFillHeartFill fontSize={25} color="white" />
                   <p>Favourite</p>
                 </div>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
