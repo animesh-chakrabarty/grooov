@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const saavnApi = createApi({
   reducerPath: "saavnApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://saavn.me/",
+    baseUrl: "https://saavn.dev/",
   }),
   endpoints: (builder) => ({
     getHomePageData: builder.query({
