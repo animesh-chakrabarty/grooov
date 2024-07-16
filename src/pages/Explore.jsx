@@ -52,7 +52,7 @@ const Explore = () => {
           <button
             onClick={() => {
               window.open(
-                "https://github.com/Animesh-Chakrabarty/Project-Music-Player"
+                "https://github.com/animesh-chakrabarty/summarizer"
               );
             }}
           >
