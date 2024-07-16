@@ -65,7 +65,7 @@ const AudioPlayer = () => {
           {/* Song Cover Image & Name */}
           <div className="flex flex-col gap-3 h-[74%] w-[100%] items-center">
             <img
-              src={data[currentSongIndex]?.image[2]?.link}
+              src={data[currentSongIndex]?.image[2]?.url}
               alt=""
               className="h-[100px] w-[100px] rounded-[8px]"
             />
@@ -76,7 +76,7 @@ const AudioPlayer = () => {
             </div>
           </div>
           {/* Buttons */}
-          <div className="flex justify-between items-center gap-1 mt-1">
+          <div className="flex items-center justify-between gap-1 mt-1">
             <button onClick={handlePrevSong} className="outline-none">
               <BiSolidSkipPreviousCircle size={40} color="black" />
             </button>
@@ -95,7 +95,7 @@ const AudioPlayer = () => {
           </div>
         </div>
         <ReactPlayer
-          url={data[currentSongIndex]?.downloadUrl[4]?.link}
+          url={data[currentSongIndex]?.downloadUrl[4]?.url}
           playing={isPlaying}
           onPlay={handlePlay}
           onPause={handlePause}

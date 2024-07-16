@@ -11,6 +11,8 @@ import {
 } from "../redux/playerSlice";
 
 const AlbumCardRect = ({ data, album }) => {
+  console.log(data);
+  console.log(album)
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.player.isPlaying);
   const currentPlayingData = useSelector((state) => state.player.data);
@@ -36,7 +38,7 @@ const AlbumCardRect = ({ data, album }) => {
       <div className="h-[120px] w-[270px] max-xl:h-[120px] max-xl:w-[240px] bg-[#D9C9F2] flex  p-2 rounded-[12px] cursor-pointer text-gray-800 bg-opacity-60 hover:bg-opacity-100 relative group max-xl:ml-3">
         {/*1. Album Cover Image */}
         <img
-          src={album?.image[2]?.link}
+          src={album?.image[2]?.url}
           alt=""
           className="object-cover h-[100%] w-[45%] rounded-lg"
         />
@@ -46,7 +48,7 @@ const AlbumCardRect = ({ data, album }) => {
           <div className="w-[100%] text-left mt-2 pl-2">
             <h1 className="truncate text-xl font-[600]">{album?.name}</h1>
             <h3 className="truncate text-[14px]">
-              {album?.artists[0]?.name}
+              {album?.artists?.all[0]?.name}
             </h3>
           </div>
           {/* Buttons */}
