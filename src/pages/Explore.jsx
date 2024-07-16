@@ -52,7 +52,7 @@ const Explore = () => {
           <button
             onClick={() => {
               window.open(
-                "https://github.com/animesh-chakrabarty/summarizer"
+                "https://github.com/animesh-chakrabarty/grooov"
               );
             }}
           >
